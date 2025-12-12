@@ -1,25 +1,37 @@
-"use client";
-
-import { useState } from "react";
 import Input from "@/components/ui/Input";
-import PasswordIcon from '@mui/icons-material/Password';
+import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import PasswordIcon from '@mui/icons-material/Password';
 import Button from "@/components/ui/Button";
-export default function LoginForm() {
+import { useState } from "react";
+
+export default function RegisterForm() {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // ⚠️ NO BACKEND YET (as per your request)
-    console.log("Attempt login:", { email, password });
-
-    // later we will integrate: POST /auth/login → JWT
+    console.log("Attempt register:", { name, email, password });
   };
 
   return (
     <form onSubmit={submit} className="space-y-5">
+        <div>
+        <Input
+          label="Name"
+          type="text"
+          required
+          className="mt-1"
+          placeholder="John Doe"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          icon={
+            <PersonOutlineIcon />
+          }
+        />
+      </div>
       {/* Email */}
       <div>
         <Input
@@ -59,5 +71,6 @@ export default function LoginForm() {
         Login
       </Button>
     </form>
+
   );
 }
