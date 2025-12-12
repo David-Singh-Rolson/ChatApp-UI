@@ -3,4 +3,3 @@
 
 echo "Husky is working 🎉"
 
-chmod +x .husky/pre-commit
