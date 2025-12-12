@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import { useTheme } from "@/app/theme-provider";
+import Input from "@/components/ui/Input";
 
 export default function LoginForm() {
-  const { theme } = useTheme(); // optional for theme-based styling
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -22,19 +22,14 @@ export default function LoginForm() {
       {/* Email */}
       <div>
         <label className="text-sm text-gray-600 dark:text-gray-300">Email</label>
-        <input
+        <Input
           type="email"
           required
-          className="
-            w-full border rounded-lg p-3 mt-1 outline-none
-            bg-white dark:bg-[#24242e]
-            text-gray-900 dark:text-gray-100
-            border-gray-300 dark:border-gray-600
-            focus:ring-2 focus:ring-purple-400
-          "
+          className="mt-1"
           placeholder="johan@example.com"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          icon={<EnvelopeIcon className="w-4 h-4" />}
         />
       </div>
 

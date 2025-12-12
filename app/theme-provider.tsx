@@ -19,7 +19,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   // Initialize theme from localStorage or system preference
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme") as "light" | "dark" | null;
-    
+
     if (savedTheme) {
       setMode(savedTheme);
     } else {
@@ -56,9 +56,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   };
 
   const toggleFont = () =>
-    setFont((f) =>
-      f === "default" ? "rounded" : f === "rounded" ? "elegant" : "default"
-    );
+    setFont((f) => (f === "default" ? "rounded" : f === "rounded" ? "elegant" : "default"));
 
   return (
     <ThemeContext.Provider value={{ mode, font, toggleTheme, toggleFont }}>
