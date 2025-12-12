@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import Input from "@/components/ui/Input";
-import PasswordIcon from '@mui/icons-material/Password';
-import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import PasswordIcon from "@mui/icons-material/Password";
+import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import Button from "@/components/ui/Button";
 export default function LoginForm() {
   const [email, setEmail] = useState("");
@@ -30,15 +30,13 @@ export default function LoginForm() {
           placeholder="johan@example.com"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          icon={
-            <MailOutlineIcon />
-          }
+          icon={<MailOutlineIcon />}
         />
       </div>
 
       {/* Password */}
       <div>
-      <Input
+        <Input
           label="Password"
           type="password"
           required
@@ -46,18 +44,12 @@ export default function LoginForm() {
           placeholder="••••••••"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          icon={
-            <PasswordIcon />
-          }
+          icon={<PasswordIcon />}
         />
       </div>
 
       {/* Button */}
-      <Button
-        type="submit"
-      >
-        Login
-      </Button>
+      <Button variant="primary">Login</Button>
     </form>
   );
 }

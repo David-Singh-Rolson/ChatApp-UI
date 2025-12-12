@@ -1,7 +1,7 @@
 import Input from "@/components/ui/Input";
-import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
-import MailOutlineIcon from '@mui/icons-material/MailOutline';
-import PasswordIcon from '@mui/icons-material/Password';
+import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
+import MailOutlineIcon from "@mui/icons-material/MailOutline";
+import PasswordIcon from "@mui/icons-material/Password";
 import Button from "@/components/ui/Button";
 import { useState } from "react";
 
@@ -18,7 +18,7 @@ export default function RegisterForm() {
 
   return (
     <form onSubmit={submit} className="space-y-5">
-        <div>
+      <div>
         <Input
           label="Name"
           type="text"
@@ -27,9 +27,7 @@ export default function RegisterForm() {
           placeholder="John Doe"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          icon={
-            <PersonOutlineIcon />
-          }
+          icon={<PersonOutlineIcon />}
         />
       </div>
       {/* Email */}
@@ -42,15 +40,13 @@ export default function RegisterForm() {
           placeholder="johan@example.com"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          icon={
-            <MailOutlineIcon />
-          }
+          icon={<MailOutlineIcon />}
         />
       </div>
 
       {/* Password */}
       <div>
-      <Input
+        <Input
           label="Password"
           type="password"
           required
@@ -58,19 +54,12 @@ export default function RegisterForm() {
           placeholder="••••••••"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          icon={
-            <PasswordIcon />
-          }
+          icon={<PasswordIcon />}
         />
       </div>
 
       {/* Button */}
-      <Button
-        type="submit"
-      >
-        Login
-      </Button>
+      <Button type="submit">Register</Button>
     </form>
-
   );
 }
