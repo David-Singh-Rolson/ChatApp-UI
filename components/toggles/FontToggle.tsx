@@ -11,7 +11,12 @@ export default function FontToggle() {
   }, []);
 
   const toggleFont = () => {
-    const nextFont = font === "default" ? "rounded" : font === "rounded" ? "elegant" : "default";
+    const nextFont =
+      font === "default"
+        ? "rounded"
+        : font === "rounded"
+          ? "elegant"
+          : "default";
     setFont(nextFont);
     localStorage.setItem("font", nextFont);
     const root = document.documentElement;

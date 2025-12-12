@@ -1,6 +1,6 @@
-import ReactQueryProvider from "@/lib/queryClient/ReactQueryProvider";
 import "./globals.css";
-import { ThemeProvider } from "./theme-provider";
+import { ReactQueryProvider, ThemeProvider } from "../providers";
+import ThemeToggle from "@/components/toggles/ThemeToggle";
 
 export default function RootLayout({
   children,
@@ -9,9 +9,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className="relative">
         <ReactQueryProvider>
-          <ThemeProvider>{children}</ThemeProvider>
+          <ThemeProvider>
+            {/* Theme Toggle Button - positioned in top-right corner on every page */}
+            <div className="fixed top-6 right-6 z-50">
+              <ThemeToggle />
+            </div>
+            {children}
+          </ThemeProvider>
         </ReactQueryProvider>
       </body>
     </html>

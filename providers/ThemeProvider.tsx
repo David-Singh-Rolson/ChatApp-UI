@@ -13,7 +13,9 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
       // Check if theme is already in store, otherwise check system preference
       const savedTheme = localStorage.getItem("ui-storage");
       if (!savedTheme) {
-        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)",
+        ).matches;
         useUIStore.setState({ theme: prefersDark ? "dark" : "light" });
       }
       setMounted(true);
