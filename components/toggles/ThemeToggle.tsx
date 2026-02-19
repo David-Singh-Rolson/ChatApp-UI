@@ -1,9 +1,10 @@
 "use client";
 
-import { useTheme } from "@/app/theme-provider";
+import { useUIStore } from "@/store/ui-store";
 
 export default function ThemeToggle() {
-  const { toggleTheme, mode } = useTheme();
+  const theme = useUIStore((state) => state.theme);
+  const toggleTheme = useUIStore((state) => state.toggleTheme);
 
   return (
     <button
@@ -11,7 +12,7 @@ export default function ThemeToggle() {
       className="relative flex items-center justify-center w-12 h-12 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-all duration-300 shadow-lg hover:shadow-xl"
       aria-label="Toggle theme"
     >
-      {mode === "light" ? (
+      {theme === "light" ? (
         // Moon icon for dark mode
         <svg
           xmlns="http://www.w3.org/2000/svg"
